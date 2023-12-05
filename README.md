@@ -1,6 +1,6 @@
 # Technical Documentation Page
 
-Learn about Flexbox in CSS from this webpage. 
+Flexbox Layout is a powerful CSS layout model that enables the creation of dynamic and responsive designs with ease. Learn about Flexbox in CSS from this webpage. 
 
 ## Project Structure
 The project consists of the following files:
