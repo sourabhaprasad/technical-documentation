@@ -5,7 +5,7 @@ Flexbox Layout is a powerful CSS layout model that enables the creation of dynam
 ## Project Structure
 The project consists of the following files:
 
-index.html: The main HTML file containing the structure of the documentation page.
+index.html: The main HTML file containing the structure of the documentation page.<br>
 styles.css: The stylesheet file that defines the visual appearance of the form.
 
 # Preview
