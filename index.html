@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <title>CSS Flexbox</title>
+    <meta charset='utf-8'>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='styles.css' rel='stylesheet'>
+</head>
+
+<body>
+    <nav id="navbar">
+        <div class="wrapper">
+            <header class="main-heading-nav">Flexbox Contents</header>
+            <ul>
+                <li class="main-link">
+                    <a class="nav-link" href="#1.Introduction_to_Flexbox">1.Introduction to Flexbox</a>
+                </li>
+                <li class="main-link">
+                    <a class="nav-link" href="#2.Basic_Concepts">2.Basic Concepts</a>
+                    <a class="nav-link-sub" href="#flex-container">Flex Container</a>
+                    <a class="nav-link-sub" href="#flex-items">Flex Items</a>
+                    <a class="nav-link-sub" href="#flex-axis">Flex Axis</a>
+                </li>
+                <li class="main-link">
+                    <a class="nav-link" href="#3.Flex_Container_Properties">3.Flex Container Properties</a>
+                    <a class="nav-link-sub" href="#flex-direction">Flex Direction</a>
+                    <a class="nav-link-sub" href="#justify-content">Justify Content</a>
+                    <a class="nav-link-sub" href="#align-items-contents">Align Items & Content</a>
+                </li>
+                <li class="main-link">
+                    <a class="nav-link" href="#4.Flex_Item_Properties">4.Flex Item Properties</a>
+                    <a class="nav-link-sub" href="#grow">Flex Grow</a>
+                    <a class="nav-link-sub" href="#shrink">Flex Shrink</a>
+                    <a class="nav-link-sub" href="#basis">Flex Basis</a>
+    
+                </li>
+                <li class="main-link">
+                    <a class="nav-link" href="#5.Responsive_Design_with_Flexbox">5.Responsive Design with Flexbox</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main id="main-doc">
+        <h1>Flexbox: A Flexible Box Layout Model</h1>
+        <section class="main-section" id="1.Introduction_to_Flexbox">
+            <header class="main-headings">1.Introduction to Flexbox</header>
+            <section class="sub-section">
+                <h5 class="sub-sub">Definition:</h5>
+                <p>Flexbox, short for Flexible Box, is a layout model in CSS that provides an efficient way
+                    to design complex layouts in a dynamic and responsive manner. It allows the distribution
+                    of space within a container and the alignment of items in a single dimension, either
+                    horizontally or vertically.
+                </p>
+                <h5 class="sub-sub">Key Features</h5>
+                <ul>
+                    <li>Flex Containers</li>
+                    <li>Flex Items</li>
+                    <li>Main Axis</li>
+                    <li>Cross Axis</li>
+                    <li>Flex Direction</li>
+                    <li>Justify Content</li>
+                    <li>Align Items</li>
+                    <li>Flex Item Properties</li>
+                </ul>
+            </section>
+        </section>
+        <section class="main-section" id='2.Basic_Concepts'>
+            <header class="main-headings">2.Basic Concepts</header>
+            <section class="sub-section">
+                <h3 class="sub-heading" id="flex-container">2.1. Flex Container</h3>
+                <h5 class="sub-sub">Definition:</h5>
+                <p>A flex container is the parent element that holds and defines the context for its child
+                    elements, known as flex items. It enables the use of the Flexbox layout model, allowing
+                    for easy and flexible arrangement of its child items along a specified axis.
+                </p>
+                <h5 class="sub-sub">Creating a Flex Container in CSS:</h5>
+                <p>To create a flex container, you need to apply the display property to the desired parent element.
+                    The display property can take two main values for creating a flex container:flex or inline-flex.
+                </p>
+                <section>
+                    <h5 class="sub-sub">1.flex:</h5>
+                    <ul>
+                        <li>This value is used when you want the flex container to behave like a block-level element.
+                        </li>
+                        <li>Example
+                            <div class="coding-blocks">
+                                <pre>
+                                    <code>
+                                        .flex-container {
+                                            display: flex;
+                                        }
+                                    </code>
+                                </pre>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h5 class="sub-sub">2.inline-flex:</h5>
+                    <ul>
+                        <li>This value is used when you want the flex container to behave like an inline-level element.
+                        </li>
+                        <li>Example
+                            <div class="coding-blocks">
+                                <pre>
+                                    <code>
+                                        .inline-flex-container {
+                                            display: inline-flex;
+                                        }
+                                    </code>
+                                </pre>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+            </section>
+            <section>
+                <section class="sub-section">
+                    <h3 class="sub-heading" id="flex-items">2.2. Flex Items</h3>
+                    <h5 class="sub-sub">Definition:</h5>
+                    <p>
+                        Flex items are the direct children of a flex container. These elements are placed inside a flex
+                        container and are subjected to the Flexbox layout model, allowing for easy alignment and
+                        distribution
+                        along the container's main and cross axes.
+                    </p>
+                    <h5 class="sub-sub">Designating an Element as a Flex Item:</h5>
+                    <p>
+                        To designate an HTML element as a flex item, it should be a direct child of a flex container.
+                        Once
+                        the parent is set as a flex container, its immediate children automatically become flex items
+                        without any additional property.
+                    <div class="coding-blocks">
+                        <pre>
+                                <code>
+                                    &lt;div class="flex-container"&gt;
+                                        &lt;!-- These are flex items --&gt;
+                                        &lt;div&gt;Item 1&lt;/div&gt;
+                                        &lt;div&gt;Item 2&lt;/div&gt;
+                                        &lt;div&gt;Item 3&lt;/div&gt;
+                                    &lt;/div&gt;
+                                </code>
+                            </pre>
+                    </div>
+                    In this example, the &lt;div&gt; elements inside the .flex-container become flex items.
+                    </p>
+                </section>
+                <section class="sub-section" >
+                    <h3 class="sub-heading" id="flex-axis">2.3. Axis</h3>
+                    <h5 class="sub-sub">Main Axis:</h5>
+                    <ul>
+                        <li>The main axis is the primary axis along which flex items are placed. 
+                            It is defined by the flex-direction property.
+                        </li>
+                        <li>
+                            For example, if flex-direction: row; is set, the main axis runs horizontally 
+                            from left to right. If flex-direction: column; is set, the main axis runs vertically 
+                            from top to bottom.
+                        </li>
+                    </ul>
+                    <h5 class="sub-sub">Cross Axis:</h5>
+                    <ul>
+                        <li>
+                            The cross axis is perpendicular to the main axis.
+                        </li>
+                        <li>
+                            If flex-direction: row; is set, the cross axis runs vertically from top to bottom. 
+                            If flex-direction: column; is set, the cross axis runs horizontally from left to right.
+                        </li>
+                    </ul>
+                    <p>
+                        Here's a brief summary based on the flex-direction property values:
+                    </p>
+                    <ul>
+                        <li class="main-point">flex-direction: row;
+                            <li class="sub-point">Main Axis: Horizontal (left to right)</li>
+                            <li class="sub-point">Cross Axis: Vertical (top to bottom)</li>
+                        </li>
+                        <li class="main-point">flex-direction: row-reverse;
+                            <li class="sub-point">Main Axis: Horizontal (right to left)</li>
+                            <li class="sub-point">Cross Axis: Vertical (top to bottom)</li>
+                        </li>
+                        <li class="main-point">flex-direction: column;
+                            <li class="sub-point">Main Axis: Vertical (top to bottom)</li>
+                            <li class="sub-point">Cross Axis: Horizontal (left to right)</li>
+                        </li>
+                        <li class="main-point">flex-direction: column-reverse;
+                            <li class="sub-point">Main Axis: Vertical (bottom to top)</li>
+                            <li class="sub-point">Cross Axis: Horizontal (left to right)</li>
+                        </li>
+                    </ul>
+
+
+                </section>
+            </section>
+
+        </section>
+        <section class="main-section" id="3.Flex_Container_Properties">
+            <header class="main-headings">3.Flex Container Properties</header>
+            <section class="sub-section">
+                <h3 class="sub-heading" id="flex-direction">3.1. Flex Direction</h3>
+                <h5 class="sub-sub">Definition:</h5>
+                <p>
+                    The flex-direction property in Flexbox is used to determine the direction of the main axis along
+                    which flex items are placed within a flex container. It establishes the primary axis of the
+                    layout, influencing the flow and arrangement of flex items.
+                </p>
+                <h5 class="sub-sub">Syntax:</h5>
+                <div class="coding-blocks">
+                    <pre>
+                            <code>
+                                .flex-container {
+                                    flex-direction: row | row-reverse | column | column-reverse;
+                                }                              
+                            </code>
+                        </pre>
+                </div>
+                <ul>
+                    <li>row: (default) Flex items are placed along the horizontal axis, starting from the left and
+                        moving towards the right.</li>
+                    <li>row-reverse: Flex items are placed along the horizontal axis, starting from the right and moving
+                        towards the left.</li>
+                    <li>column: Flex items are placed along the vertical axis, starting from the top and moving towards
+                        the bottom.</li>
+                    <li>column-reverse: Flex items are placed along the vertical axis, starting from the bottom and
+                        moving towards the top.</li>
+                </ul>
+            </section>
+            <section class="sub-section">
+                <h3 class="sub-heading" id="justify-content">3.2. Justify Content</h3>
+
+
+                <h5 class="sub-sub">Definition:</h5>
+                <p>
+                    The justify-content property in Flexbox is used to align flex items along the main axis of the flex
+                    container. It controls the distribution of space between and around flex items, influencing their
+                    positioning within the container.
+                </p>
+                <h5 class="sub-sub">Syntax:</h5>
+                <div class="coding-blocks">
+                    <pre>
+                            <code>
+                                .flex-container {
+                                    justify-content: flex-start | flex-end | center | space-between | space-around;
+                                }                               
+                            </code>
+                        </pre>
+                </div>
+                <ul>
+                    <li>flex-start: (default) Flex items are aligned towards the start of the main axis.</li>
+                    <li>flex-end: Flex items are aligned towards the end of the main axis.</li>
+                    <li>center: Flex items are centered along the main axis.</li>
+                    <li>space-between: Flex items are evenly distributed along the main axis, with the first item
+                        aligned to the start and the last item aligned to the end.</li>
+                    <li>space-around: Flex items are evenly distributed along the main axis with equal space around
+                        them.</li>
+                </ul>
+            </section>
+
+
+            <section class="sub-section">
+                <h3 class="sub-heading" id="align-items-contents">3.3. Align Items and Align Content</h3>
+
+                <section>
+                    <h3 class="sub-heading">Align Items:</h3>
+                    <h5 class="sub-sub">Definition:</h5>
+                    <p>
+                        The align-items property in Flexbox is used to align flex items along the cross axis of the flex
+                        container.
+                        It controls the vertical alignment of items within a single flex line.
+                    </p>
+                    <h5 class="sub-sub">Syntax:</h5>
+                    <div class="coding-blocks">
+                        <pre>
+                                <code>
+                                    .flex-container {
+                                        align-items: flex-start | flex-end | center | baseline | stretch;
+                                    }                                      
+                                </code>
+                            </pre>
+                    </div>
+                    <ul>
+                        <li>flex-start: (default) Flex items are aligned towards the start of the cross axis.</li>
+                        <li>flex-end: Flex items are aligned towards the end of the cross axis.</li>
+                        <li>center: Flex items are centered along the cross axis.</li>
+                        <li>baseline: Flex items are aligned such that their baselines align.</li>
+                        <li>stretch: Flex items are stretched to fill the container along the cross axis.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3 class="sub-heading">Align Content:</h3>
+                    <h5 class="sub-sub">Definition:</h5>
+                    <p>
+                        The align-content property is used in multi-line flex containers to align flex lines along the
+                        cross
+                        axis. It does not have any effect on a single-line flex container.
+                    </p>
+                    <h5 class="sub-sub">Syntax:</h5>
+                    <div class="coding-blocks">
+                        <pre>
+                                <code>
+                                    .flex-container {
+                                        align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+                                    }                                        
+                                </code>
+                            </pre>
+                    </div>
+                    <ul>
+                        <li>flex-start: (default) Flex lines are packed towards the start of the cross axis.</li>
+                        <li>flex-end: Flex lines are packed towards the end of the cross axis.</li>
+                        <li>center: Flex lines are centered along the cross axis.</li>
+                        <li>space-between: Flex lines are evenly distributed along the cross axis, with the first line
+                            at the
+                            start and the last line at the end</li>
+                        <li>space-around: Flex lines are evenly distributed along the cross axis with equal space around
+                            them.</li>
+                        <li>stretch: Flex lines are stretched to fill the container along the cross axis.</li>
+                    </ul>
+                </section>
+            </section>
+        </section>
+        <section class="main-section" id="4.Flex_Item_Properties">
+            <header class="main-headings">4.Flex Item Properties</header>
+            <section class="sub-section" id="grow-shrink">
+                <h3 class="sub-heading">4.1. Flex Grow, Flex Shrink, and Flex Basis</h3>
+
+                <section class="sub-section">
+                    <h3 class="sub-heading" id="grow">Flex Grow</h3>
+                    <h5 class="sub-sub">Definition:</h5>
+                    <p>
+                        The flex-grow property is used to specify the ability of a flex item to grow in size along the
+                        main axis if necessary. It defines the proportion by which the item should grow relative to the
+                        other
+                        flex items in the same container.
+                    </p>
+                    <h5 class="sub-sub">Syntax:</h5>
+                    <div class="coding-blocks">
+                        <pre>
+                                <code>
+                                    .flex-item {
+                                        flex-grow: &lt;number&gt;;
+                                    }                                          
+                                </code>
+                            </pre>
+                    </div>
+                    <p>
+                        &lt;number&gt;: A unitless number indicating the factor by which the flex item should grow.
+                        Default is 0.
+                    </p>
+                </section>
+
+                <section class="sub-section">
+                    <h3 class="sub-heading" id="shrink">Flex Shrink</h3>
+                    <h5 class="sub-sub">Definition:</h5>
+                    <p>
+                        The flex-shrink property is used to specify the ability of a flex item to shrink in size along
+                        the
+                        main axis if necessary. It defines the factor by which the item should shrink relative to the
+                        other
+                        flex items in the same container.
+                    </p>
+                    <h5 class="sub-sub">Syntax:</h5>
+                    <div class="coding-blocks">
+                        <pre>
+                                <code>
+                                    .flex-item {
+                                        flex-shrink: &lt;number&gt;;
+                                    }                                          
+                                </code>
+                            </pre>
+                    </div>
+                    <p>
+                        &lt;number&gt;: A unitless number indicating the factor by which the flex item should shrink.
+                        Default is 1.
+                    </p>
+                </section>
+
+                <section class="sub-section">
+                    <h3 class="sub-heading" id="basis">Flex Basis</h3>
+                    <h5 class="sub-sub">Definition:</h5>
+                    <p>
+                        The flex-basis property is used to set the initial size of a flex item along the main axis
+                        before
+                        the remaining space is distributed. It defines the ideal size of the item before any free space
+                        is
+                        distributed or any shrinking occurs.
+                    </p>
+                    <h5 class="sub-sub">Syntax:</h5>
+                    <div class="coding-blocks">
+                        <pre>
+                                <code>
+                                    .flex-item {
+                                        flex-basis: &lt;length&gt; | &lt;percentage&gt; | auto;
+                                      }                                      
+                                </code>
+                            </pre>
+                    </div>
+                    <ul>
+                        <li>&lt;length&gt;: A fixed size in pixels or other length units.</li>
+                        <li> &lt;percentage&gt;: A percentage of the parent container's size.</li>
+                        <li>auto: The default value, allowing the browser to calculate the size based on the content.
+                        </li>
+                    </ul>
+                </section>
+                <section class="sub-section">
+                    <h5 class="sub-sub">How They Affect Sizing and Distribution:</h5>
+                    <ul>
+                        <li>flex-grow: Determines how much a flex item can grow relative to other items when there is
+                            extra space along the main axis.</li>
+                        <li>flex-shrink: Controls how much a flex item can shrink relative to other items when there is
+                            insufficient space along the main axis.</li>
+                        <li>flex-basis: Defines the initial size of a flex item before any growth or shrinking occurs.
+                        </li>
+                    </ul>
+                </section>
+            </section>
+        </section>
+        <section class="main-section" id="5.Responsive_Design_with_Flexbox">
+            <header class="main-headings">5.Responsive Design with Flexbox</header>
+            <section class="sub-section">
+                <h3 class="sub-heading" id="flex-direction">Flexbox for Responsive Design:</h3>
+                <h5 class="sub-sub"></h5>
+                <p>
+                    Flexbox is a powerful tool for creating responsive designs because it provides a flexible and
+                    dynamic layout model.
+                    Here's how Flexbox facilitates responsive design:
+                <ol>
+                    <li>Flexible Layouts: Flexbox allows items to grow or shrink based on available space,
+                        making it easy to create layouts that adapt to different screen sizes.
+                    </li>
+                    <li>
+                        Ordering: The order property in Flexbox enables the rearrangement of items without changing the
+                        HTML structure,
+                        which is useful for adapting content order for different devices.
+                    </li>
+                    <li>
+                        Alignment and Justification: Flexbox provides properties like align-items, justify-content,
+                        and align-self that help control the alignment of items along both the main and cross axes,
+                        making it
+                        easier to center or distribute items as needed.
+                    </li>
+                </ol>
+                </p>
+            </section>
+
+    </main>
+</body>
+
+</html>
