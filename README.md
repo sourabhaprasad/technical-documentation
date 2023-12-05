@@ -8,6 +8,9 @@ The project consists of the following files:
 index.html: The main HTML file containing the structure of the documentation page.
 styles.css: The stylesheet file that defines the visual appearance of the form.
 
+## Video
+<video width="400" alt='demo' src="https://github.com/souri-droid/technical-documentation/assets/70069572/5335ef21-bed8-43b3-8028-2a6e9f815e0a">
+
 ## Screenshots
 <div style="display: flex; justify-content: space-between;">
   <img width="400" alt="image" src="https://github.com/souri-droid/technical-documentation/assets/70069572/dde544e7-c123-471a-86ee-457264fb973c">
