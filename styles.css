@@ -22,6 +22,7 @@ body {
     overflow: auto;
     position: relative;
     list-style: none;
+    font-size: smaller;
 }
 
 .main-heading-nav{
